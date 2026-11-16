@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple CRUD Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Simple CRUD Application</h2>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <form id="itemForm">
+        <input type="hidden" id="itemId">
+
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Enter item name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" id="price" placeholder="Enter item price" min="0" step="any" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submitBtn">Submit</button>
+          <button type="button" id="cancelBtn" class="btn-cancel" style="display: none;">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-section">
+      <table id="itemsTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="itemsTableBody">
+          <!-- Dynamic item rows will be loaded here -->
+        </tbody>
+      </table>
+      <div id="noItemsMessage" class="no-items" style="display: none;">No items available.</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
